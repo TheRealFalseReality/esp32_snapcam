@@ -14,9 +14,9 @@ esphome:
   friendly_name: "${friendly_name}"
   # Automatically add the mac address to the name
   name_add_mac_suffix: true
-  comment: "AquaPiCam ESP32 - Aquarium Camera"
+  comment: "AquaPiCam ESP32 - AquaPi SnapCam"
   project:
-    name: TheRealFalseReality.aquapi
+    name: TheRealFalseReality.aquapi_snapcam
     version: "${app_version}"
   on_boot: 
     then:
@@ -34,7 +34,7 @@ esp32:
     type: arduino
 
 dashboard_import:
-  package_import_url: github://TheRealFalseReality/aquapi/aquapi_camera_config.yaml@main
+  package_import_url: github://TheRealFalseReality/aquapi_snapcam/aquapi_camera_config.yaml@main
   import_full_config: ${import_config}
 
 # Enable logging
@@ -68,7 +68,7 @@ light:
     id: camera_led
 
 esp32_camera:
-  name: AquaPi Camera
+  name: AquaPi SnapCam
   external_clock:
     pin: 
       number: GPIO0
