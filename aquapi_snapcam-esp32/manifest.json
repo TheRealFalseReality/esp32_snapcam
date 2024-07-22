@@ -1,0 +1,13 @@
+{
+  "chipFamily": "ESP32",
+  "ota": {
+    "path": "aquapi_snapcam-esp32/aquapi_snapcam-esp32.ota.bin",
+    "md5": "101e493e33d44e52890daf2d302860ee"
+  },
+  "parts": [
+    {
+      "path": "aquapi_snapcam-esp32/aquapi_snapcam-esp32.factory.bin",
+      "offset": 0
+    }
+  ]
+}
