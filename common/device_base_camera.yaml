@@ -66,6 +66,7 @@ light:
     output: camera_pin
     name: Camera LED
     id: camera_led
+    icon: mdi:led-off
 
 esp32_camera:
   name: AquaPi SnapCam
@@ -109,6 +110,7 @@ sensor:
   # Internal Temp.
   - platform: internal_temperature
     name: "Internal Temperature"
+    icon: mdi:thermometer
 
   # Wifi Signal 
   - platform: wifi_signal # Reports the WiFi signal strength/RSSI in dB
@@ -117,6 +119,7 @@ sensor:
     id: wifi_signal_db
     update_interval: 60s
     entity_category: "diagnostic"
+    icon: mdi:wifi
 
   # Wifi %
   - platform: copy # Reports the WiFi signal strength in %
@@ -126,6 +129,7 @@ sensor:
       - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);
     unit_of_measurement: "%"
     entity_category: "diagnostic"
+    icon: mdi:wifi
 
   # Uptime sensor
   - platform: uptime
@@ -135,6 +139,7 @@ binary_sensor:
   # API Status
   - platform: status
     name: "Status"
+    icon: mdi:check-circle
 
 text_sensor: 
   # Hostname
