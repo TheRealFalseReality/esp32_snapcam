@@ -8,7 +8,7 @@
       "chipFamily": "ESP32",
       "ota": {
         "path": "aquapi_snapcam-esp32/aquapi_snapcam-esp32.ota.bin",
-        "md5": "6a167559b0d2654ef3a5ff054a238d01"
+        "md5": "a4dd951f93634068f8b92bd92aea2849"
       },
       "parts": [
         {
