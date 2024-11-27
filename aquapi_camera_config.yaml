@@ -3,7 +3,7 @@ substitutions:
   name: "aquapi_snapcam"
   friendly_name: "AquaPi SnapCam"
   # App Version - Updated: 6/2024
-  app_version: "2024.7.0"
+  app_version: "24.11.0"
 
 packages:
   device_base_camera: !include common/device_base_camera.yaml
