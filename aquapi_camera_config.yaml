@@ -2,7 +2,6 @@ substitutions:
   # names
   name: "aquapi_snapcam"
   friendly_name: "AquaPi SnapCam"
-  # App Version - Updated: 6/2024
   app_version: "24.11.1"
 
 packages:
