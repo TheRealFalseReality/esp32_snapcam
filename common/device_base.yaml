@@ -8,6 +8,10 @@ substitutions:
   sdaPin: "26"
   sclPin: "27"
 
+  sorting_group_misc_weight: '97'
+  sorting_group_diagnostic_weight: '98'
+  sorting_group_config_weight: '99'
+
 esphome:
   min_version: 2024.6.0
   name: "${name}"
@@ -16,7 +20,7 @@ esphome:
   name_add_mac_suffix: true
   comment: "AquaPiCam ESP32 - AquaPi SnapCam"
   project:
-    name: TheRealFalseReality.aquapi_snapcam
+    name: TheRealFalseReality.aquapi_SnapCam
     version: "${app_version}"
   on_boot: 
     then:
@@ -34,7 +38,7 @@ esp32:
     type: arduino
 
 dashboard_import:
-  package_import_url: github://TheRealFalseReality/aquapi_snapcam/aquapi_camera_config.yaml@main
+  package_import_url: github://TheRealFalseReality/esp32_snapcam/aquapi_camera_config.yaml@main
   import_full_config: ${import_config}
 
 # Enable logging
@@ -53,6 +57,16 @@ captive_portal:
 
 web_server:
   version: 3
+  sorting_groups:
+    - id: sorting_group_diagnostic
+      name: "AquaPi SnapCam Diagnostic"
+      sorting_weight: ${sorting_group_diagnostic_weight}
+    - id: sorting_group_config
+      name: "AquaPi SnapCam Configuration"
+      sorting_weight: ${sorting_group_config_weight}
+    - id: sorting_group_misc
+      name: "Misc. Sensors"
+      sorting_weight: ${sorting_group_misc_weight}
   
 improv_serial:
 
@@ -105,12 +119,13 @@ output:
     pin: 4
     id: camera_pin
 
-
 sensor:
   # Internal Temp.
   - platform: internal_temperature
     name: "Internal Temperature"
     icon: mdi:thermometer
+    web_server:
+      sorting_group_id: sorting_group_diagnostic
 
   # Wifi Signal 
   - platform: wifi_signal # Reports the WiFi signal strength/RSSI in dB
@@ -120,6 +135,8 @@ sensor:
     update_interval: 60s
     entity_category: "diagnostic"
     icon: mdi:wifi
+    web_server:
+      sorting_group_id: sorting_group_diagnostic
 
   # Wifi %
   - platform: copy # Reports the WiFi signal strength in %
@@ -130,6 +147,8 @@ sensor:
     unit_of_measurement: "%"
     entity_category: "diagnostic"
     icon: mdi:wifi
+    web_server:
+      sorting_group_id: sorting_group_diagnostic
 
   # Uptime sensor
   - platform: uptime
@@ -140,6 +159,8 @@ binary_sensor:
   - platform: status
     name: "Status"
     icon: mdi:check-circle
+    web_server:
+      sorting_group_id: sorting_group_diagnostic
 
 text_sensor: 
   # Hostname
@@ -150,6 +171,8 @@ text_sensor:
     lambda: |-
       return {"${name}"};
     entity_category: "diagnostic"
+    web_server:
+      sorting_group_id: sorting_group_diagnostic
 
   # Wifi Info
   - platform: wifi_info
@@ -159,25 +182,35 @@ text_sensor:
     ssid:
       name: Connected SSID
       icon: mdi:wifi-arrow-left-right
+    web_server:
+      sorting_group_id: sorting_group_diagnostic
 
 button:
   # Soft Restart
   - platform: restart
     id: restart_button
     name: "Restart"
+    web_server:
+      sorting_group_id: sorting_group_diagnostic
 
   # Factory Reset
   - platform: factory_reset
     name: Factory Reset (USE WITH CAUTION)
     disabled_by_default: true
+    web_server:
+      sorting_group_id: sorting_group_diagnostic
 
   # Safe Mode Restart
   - platform: safe_mode
     name: "Restart in Safe Mode"
     id: restart_safe
+    web_server:
+      sorting_group_id: sorting_group_diagnostic
 
   # Shutdown
   - platform: shutdown
     name: "Shutdown"
     disabled_by_default: true
     id: shutdown_button
+    web_server:
+      sorting_group_id: sorting_group_diagnostic
