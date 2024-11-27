@@ -10,4 +10,3 @@ packages:
   aquapi: !include common/aquapi.yaml
   ota_https: !include common/ota_https.yaml
   # debug: !include common/debug.yaml
-.
