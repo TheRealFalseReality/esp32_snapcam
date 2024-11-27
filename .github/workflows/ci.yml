@@ -22,7 +22,7 @@ jobs:
       matrix:
         #### Modify below here to match your project ####
         file:
-          - aquapi_camera_config.yaml
+          - aquapi_camera_config
 
         esphome-version:
           - stable
