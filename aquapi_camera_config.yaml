@@ -2,11 +2,10 @@ substitutions:
   # names
   name: "aquapi_snapcam"
   friendly_name: "AquaPi SnapCam"
-  # App Version - Updated: 6/2024
-  app_version: "24.11.0"
+  app_version: "24.11.1"
 
 packages:
-  device_base_camera: !include common/device_base_camera.yaml
+  device_base_camera: !include common/device_base.yaml
   aquapi: !include common/aquapi.yaml
-  ota_https: !include common/ota_https_camera.yaml
+  ota_https: !include common/ota_https.yaml
   # debug: !include common/debug.yaml
