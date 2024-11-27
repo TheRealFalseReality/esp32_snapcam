@@ -6,7 +6,7 @@ http_request:
 
 update:
   - platform: http_request
-    name: AquaPi Firmware Update
+    name: AquaPi Snapcam Firmware Update
     id: update_firmware_sensor
     entity_category: 'diagnostic'
     icon: mdi:update
@@ -17,7 +17,7 @@ update:
 button:
   - platform: template
     id: update_firmware
-    name: Update AquaPi Firmware - Stable
+    name: Update AquaPi Snapcam Firmware - Stable
     entity_category: "config"
     icon: mdi:update
     disabled_by_default: true
