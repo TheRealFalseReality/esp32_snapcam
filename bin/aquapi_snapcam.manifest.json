@@ -1,0 +1,23 @@
+{
+  "name": "AquaPi SnapCam",
+  "version": "24.11.0",
+  "home_assistant_domain": "esphome",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "ota": {
+        "path": "aquapi_snapcam-esp32.ota.bin",
+        "md5": "cb7042fb822edd25d7d073bf1cba5063",
+        "summary": "**Full Changelog**: https://github.com/TheRealFalseReality/esp32_snapcam/commits/24.11.0",
+        "release_url": "https://github.com/TheRealFalseReality/esp32_snapcam/releases/tag/24.11.0"
+      },
+      "parts": [
+        {
+          "path": "aquapi_snapcam-esp32.factory.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}
