@@ -8,38 +8,10 @@ substitutions:
   sdaPin: "26"
   sclPin: "27"
 
-  sorting_group_misc_weight: '97'
-  sorting_group_diagnostic_weight: '98'
-  sorting_group_config_weight: '99'
-
-esphome:
-  min_version: 2024.6.0
-  name: "${name}"
-  friendly_name: "${friendly_name}"
-  # Automatically add the mac address to the name
-  name_add_mac_suffix: true
-  comment: "AquaPiCam ESP32 - AquaPi SnapCam"
-  project:
-    name: TheRealFalseReality.aquapi_SnapCam
-    version: "${app_version}"
-  on_boot: 
-    then:
-      - light.turn_on: camera_led
-      - delay: 500ms
-      - light.turn_off: camera_led
-      - delay: 500ms
-      - light.turn_on: camera_led
-      - delay: 500ms
-      - light.turn_off: camera_led
-
 esp32:
   board: esp32cam
   framework:
     type: arduino
-
-dashboard_import:
-  package_import_url: github://TheRealFalseReality/esp32_snapcam/aquapi_camera_config.yaml@main
-  import_full_config: ${import_config}
 
 # Enable logging
 logger:
@@ -54,19 +26,6 @@ wifi:
   ap:
 
 captive_portal:
-
-web_server:
-  version: 3
-  sorting_groups:
-    - id: sorting_group_diagnostic
-      name: "AquaPi SnapCam Diagnostic"
-      sorting_weight: ${sorting_group_diagnostic_weight}
-    - id: sorting_group_config
-      name: "AquaPi SnapCam Configuration"
-      sorting_weight: ${sorting_group_config_weight}
-    - id: sorting_group_misc
-      name: "Misc. Sensors"
-      sorting_weight: ${sorting_group_misc_weight}
   
 improv_serial:
 
