@@ -26,5 +26,5 @@ button:
     on_press: 
       then:
         - ota.http_request.flash:
-            md5_url: https://therealfalsereality.github.io/esp32_snapcam/firmware/aquapi_snapcam-esp32.ota.bin.md5
-            url: https://therealfalsereality.github.io/esp32_snapcam/firmware/aquapi_snapcam-esp32.ota.bin
+            md5_url: https://therealfalsereality.github.io/esp32_snapcam/firmware/aquapi-snapcam-esp32.ota.bin.md5
+            url: https://therealfalsereality.github.io/esp32_snapcam/firmware/aquapi-snapcam-esp32.ota.bin
