@@ -49,7 +49,6 @@ text_sensor:
     name: "AquaPi SnapCam Version"
     id: aquapi_version
     icon: mdi:update
-    update_interval: '24h'
     lambda: |-
       return {"${app_version}"};
     entity_category: "diagnostic"
@@ -59,7 +58,6 @@ text_sensor:
     name: GitHub
     id: github
     icon: mdi:github
-    update_interval: '24h'
     lambda: |-
       return {"github.com/TheRealFalseReality/aquapi_snapcam"};
     entity_category: "diagnostic"
